@@ -21,10 +21,12 @@ FSRs are basically a resistor that changes its resistive value (in ohms Ω) depe
 ### FIGURE 01 GRAPH OF FORCE vs RESISTANCE **
 
 
+![Screenshot 2024-02-29 060329](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/b237a638-011e-491f-95e4-f8acffc48e4f)
 
 
 ![image](https://user-images.githubusercontent.com/36288975/163532957-82d57567-a1c3-48c5-8a87-7ea66d6fca49.png)
 
+![Screenshot 2024-02-29 060254](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/f1ad1adc-7ff9-4e5e-98fb-ca3180dd335a)
 
 
 
@@ -36,7 +38,8 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
  ![image](https://user-images.githubusercontent.com/36288975/163532972-2b909551-12c9-485d-adb1-d1e988d557bd.png)
 
-### TABLE -01 FORCE AND OUTPUT VOLTAGES**
+### TABLE -01 FORCE AND OUTPUT VOLTAGES**![Screenshot 2024-02-29 060228](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/57b26031-646c-4e25-8343-2f437fec1483)
+
 	
   Table -01 indicates the approximate analog voltage based on the sensor force/resistance w/a 5V supply and 10K pull down resistor.
 
@@ -48,6 +51,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
+![Screenshot 2024-02-29 060239](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/a646513e-4260-4abc-b836-c3dd56de3682)
 
 
 
@@ -76,9 +80,38 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+ *your roll no :212221220051
+ * your name : SUGAVARATHAN L
+ * department and year : INFORMATION TECHNOLOGY (3 YEAR)
+
+   int LED=7;
+int fsr;
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  fsr=analogRead(A0);
+  Serial.print("raw values=");
+  Serial.println(fsr);
+  delay(1000);
+  int m;
+  m = map(fsr,0,159,0,10);
+   Serial.print("mapped values=");
+  Serial.println(m);
+  delay(1000);
+  
+  if(m>5)
+  {
+    digitalWrite(LED,HIGH);
+    delay(500);
+    digitalWrite(LED,LOW);
+    delay(500);
+  }
+} 
  
  
  
@@ -97,6 +130,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
+![Screenshot 2024-02-29 060726](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/9cdeab65-d086-4d7a-8c59-c01980393414)
 
 ### TABLE -02 standard deviation table 
 ### Population Standard Deviation
@@ -119,6 +153,7 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 
 
 
+![Screenshot 2024-02-29 060245](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/aa72b7a6-82bd-42d4-9a8a-110148a3c4cd)
 
 
 
