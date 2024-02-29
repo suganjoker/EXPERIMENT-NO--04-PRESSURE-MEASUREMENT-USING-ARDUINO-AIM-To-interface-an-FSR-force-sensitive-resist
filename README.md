@@ -18,6 +18,8 @@ FSRs are basically a resistor that changes its resistive value (in ohms Ω) depe
 
 ![image](https://user-images.githubusercontent.com/36288975/163532939-d6888ae1-4068-4d83-86a7-fc4c32d5179e.png)
 
+![Screenshot 2024-02-29 060329](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/45e0ba9c-c631-44ab-9c0f-5fe7763f3a5a)
+
 ### FIGURE 01 GRAPH OF FORCE vs RESISTANCE **
 
 
@@ -26,6 +28,8 @@ FSRs are basically a resistor that changes its resistive value (in ohms Ω) depe
 ![image](https://user-images.githubusercontent.com/36288975/163532957-82d57567-a1c3-48c5-8a87-7ea66d6fca49.png)
 
 
+![Screenshot 2024-02-29 060239](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/6f0e13dd-c1c2-4593-8a13-83d98c3d0b6c)
+![Screenshot 2024-02-29 060245](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/afbab42c-872a-4986-bb93-6356aeedc4b9)
 
 
 ### FIGURE 02 FORCE SENSITIVE RESITOR FOIL DISC TYPE  
@@ -35,6 +39,7 @@ FSRs are often a polymer with conductive material silk-screened on. That means t
 The easiest way to measure a resistive sensor is to connect one end to power and the other to a pull-down resistor to ground. Then the point between the fixed pull down resistor and the variable FSR resistor is connected to the analog input of a microcontroller such as an Arduino The way this works is that as the resistance of the FSR decreases, the total resistance of the FSR and the pull down resistor decreases from about 100Kohm to 10Kohm. That means that the current flowing through both resistors increases which in turn causes the voltage across the fixed 10K resistor to increase.
 
  ![image](https://user-images.githubusercontent.com/36288975/163532972-2b909551-12c9-485d-adb1-d1e988d557bd.png)
+![Screenshot 2024-02-29 060228](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/de9da51e-b16a-47da-a399-c891cd291467)
 
 ### TABLE -01 FORCE AND OUTPUT VOLTAGES**
 	
@@ -60,6 +65,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ### FIGURE-03 CIRCUIT DIAGRAM
 
+![Screenshot 2024-02-29 060329](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/ce9de9c5-354c-44ec-b4e8-13cf53cfcb1e)
 
 
 ### PROCEDURE:
@@ -76,9 +82,31 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+ *your roll no :212221220051
+ * your name : sugavarathan.l
+
+ * department and year :information technology (3 year)
+ * int LED=7;
+int fsr;
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  fsr=analogRead(A0);
+  Serial.print("raw values=");
+  Serial.println(fsr);
+  delay(1000);
+  int m;
+  m = map(fsr,0,159,0,10);
+   Serial.print("mapped values=");
+  Serial.println(m);
+  delay(1000);
+  
+}
  
  
  
@@ -96,6 +124,8 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  
 
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
+![Screenshot 2024-02-29 060329](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/d08d1a11-0cd7-4673-b786-6dd8a19a814b)
+![Screenshot 2024-02-29 060726](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/105915942/cdaa058a-de2b-4cdc-98d3-fc5c8cbe6ef6)
 
 
 ### TABLE -02 standard deviation table 
